@@ -1,0 +1,42 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer
+    class='py-12 mt-20 border-t border-gray-200 dark:border-gray-800 bg-surface-light dark:bg-surface-dark'
+>
+    <div class='container mx-auto px-4 text-center'>
+        <div class='flex items-center justify-center gap-2 mb-4 text-gray-400'>
+            <img
+                src='/logo-symbolic.svg'
+                class='w-8 h-8 opacity-50 dark:invert'
+                alt='Status Kitchen'
+            />
+        </div>
+
+        <p class='text-sm text-gray-500 max-w-md mx-auto mb-8'>
+            Status Kitchen is an independent open-source project, designed for
+            GNOME but not affiliated with the GNOME Foundation.
+        </p>
+
+        <div
+            class='flex justify-center gap-6 text-sm font-medium text-gray-600 dark:text-gray-400'
+        >
+            <a href='/privacy' class='hover:text-gnome-blue transition-colors'
+                >Privacy</a
+            >
+            <a
+                href='https://github.com/keithvassallomt/statuskitchen'
+                class='hover:text-gnome-blue transition-colors'>GitHub</a
+            >
+            <a
+                href='https://cookbook.statuskitchen.app'
+                class='hover:text-gnome-blue transition-colors'>Cookbook</a
+            >
+        </div>
+
+        <p class='mt-8 text-xs text-gray-400'>
+            &copy; {year} Status Kitchen Contributors. Licensed under GPLv3.
+        </p>
+    </div>
+</footer>

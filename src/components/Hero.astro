@@ -1,0 +1,104 @@
+---
+import Button from './Button.astro';
+---
+
+<section class='relative min-h-screen flex items-center overflow-hidden'>
+    <div
+        class='absolute top-0 left-0 right-0 bottom-0 opacity-60 dark:opacity-20 pointer-events-none select-none z-0'
+    >
+        <img
+            src='/hero-shot.png'
+            alt='GNOME Top Bar'
+            class='w-full h-full object-cover object-top mask-image-gradient'
+            style='mask-image: linear-gradient(to bottom, black 0%, black 80%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, black 0%, black 80%, transparent 100%); object-position: top center;'
+        />
+    </div>
+
+    <!-- Background Blob -->
+    <div
+        class='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] bg-gnome-blue/10 blur-[120px] rounded-full -z-10 pointer-events-none'
+    >
+    </div>
+
+    <div class='container mx-auto px-4 relative z-10 pt-20'>
+        <div class='max-w-2xl'>
+            <!-- Left Column: Copy -->
+            <div class='text-center lg:text-left'>
+                <!-- Mobile Logo -->
+                <img
+                    src='/logo.svg'
+                    alt='Status Kitchen Logo'
+                    class='w-16 h-16 mx-auto mb-6 md:hidden'
+                />
+
+                <div
+                    class='inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gnome-blue/10 text-gnome-blue text-xs font-bold mb-6 border border-gnome-blue/20'
+                >
+                    <span
+                        class='w-2 h-2 rounded-full bg-gnome-blue animate-pulse'
+                    ></span>
+                    v1.0 Now Available
+                </div>
+
+                <h1
+                    class='text-5xl lg:text-7xl font-extrabold tracking-tight text-cast-iron dark:text-white mb-6'
+                >
+                    Your Tray.<br />
+                    <span
+                        class='text-transparent bg-clip-text bg-gradient-to-r from-gnome-blue to-gnome-blue-light'
+                    >
+                        Your Rules.
+                    </span>
+                </h1>
+
+                <p
+                    class='text-xl text-cast-iron/80 dark:text-gray-300 mb-8 leading-relaxed'
+                >
+                    The missing link between legacy apps and the modern GNOME
+                    Shell. Customize, organize, and style your system tray using
+                    powerful Recipes.
+                </p>
+
+                <div
+                    class='flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start'
+                >
+                    <Button
+                        href='#download'
+                        class='w-full sm:w-auto text-base !px-8 !py-3'
+                    >
+                        <img
+                            src='/logo-symbolic.svg'
+                            class='w-5 h-5 mr-2 brightness-0 invert'
+                            alt=''
+                        /> Get Status Kitchen
+                    </Button>
+                    <Button
+                        href='https://cookbook.statuskitchen.app'
+                        external
+                        variant='secondary'
+                        class='w-full sm:w-auto text-base !px-8 !py-3'
+                    >
+                        <i class='ph-bold ph-book-open-text mr-2'></i> Browse Recipes
+                    </Button>
+                </div>
+
+                <div
+                    class='mt-8 flex items-center justify-center lg:justify-start gap-6 text-sm text-gray-500 dark:text-gray-400 font-medium'
+                >
+                    <div class='flex items-center gap-2'>
+                        <i class='ph-fill ph-check-circle text-gnome-green'></i> Open
+                        Source
+                    </div>
+                    <div class='flex items-center gap-2'>
+                        <i class='ph-fill ph-check-circle text-gnome-green'></i> Zero
+                        Telemetry
+                    </div>
+                    <div class='flex items-center gap-2'>
+                        <i class='ph-fill ph-check-circle text-gnome-green'></i> Made
+                        for GNOME
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,141 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Hero from '../components/Hero.astro';
+import FeatureGrid from '../components/FeatureGrid.astro';
+import Button from '../components/Button.astro';
+import AppCarousel from '../components/AppCarousel.svelte';
+
+const features = [
+    {
+        icon: 'ph-paint-brush-broad',
+        title: 'Native Aesthetic',
+        description:
+            'Status Kitchen automatically masks and recolors legacy tray icons to perfectly match your GNOME system theme, light or dark.'
+    },
+    {
+        icon: 'ph-sliders-horizontal',
+        title: 'Total Control',
+        description:
+            "Don't just hide icons. Rebuild menus, add custom actions, and organize your tray exactly how you want it."
+    },
+    {
+        icon: 'ph-download-simple',
+        title: 'Community Recipes',
+        description:
+            'Browse the Cookbook to find and install ready-made configurations for popular apps like Spotify, Discord, and Telegram.'
+    }
+];
+---
+
+<PageLayout
+    title='Status Kitchen - The GNOME Tray Manager'
+    transparentHeader={true}
+>
+    <Hero />
+
+    <!-- App Showcase Section -->
+    <!-- App Showcase Section -->
+    <section
+        class='py-8 md:py-16 bg-white dark:bg-surface-dark/50 border-b border-gray-200 dark:border-white/5'
+    >
+        <AppCarousel client:load />
+    </section>
+
+    <section id='features' class='py-20 bg-surface-light dark:bg-surface-dark'>
+        <div class='container mx-auto px-4'>
+            <div class='text-center max-w-2xl mx-auto mb-16'>
+                <h2
+                    class='text-3xl font-bold mb-4 text-cast-iron dark:text-white'
+                >
+                    Why Status Kitchen?
+                </h2>
+                <p class='text-gray-600 dark:text-gray-400'>
+                    GNOME does not support tray icons - but many apps expect
+                    them to be available. Status Kitchen tries to bridge the gap
+                    by transforming tray icons to modern status icons, whilst
+                    not cluttering your GNOME desktop.
+                </p>
+            </div>
+
+            <FeatureGrid features={features} />
+        </div>
+    </section>
+
+    <section class='py-20 border-t border-gray-200 dark:border-gray-800'>
+        <div class='container mx-auto px-4'>
+            <div
+                class='bg-gnome-blue rounded-3xl p-8 md:p-16 text-white text-center relative overflow-hidden'
+            >
+                <!-- Background Image -->
+                <div class='absolute inset-0 z-0'>
+                    <img
+                        src='/cookbook_promo.png'
+                        alt='Status Kitchen Cookbook'
+                        class='w-full h-full object-cover opacity-80'
+                    />
+                    <div class='absolute inset-0 bg-black/60'></div>
+                </div>
+
+                <h2 class='text-3xl md:text-4xl font-bold mb-6 relative z-10'>
+                    Discover the Cookbook
+                </h2>
+                <p
+                    class='text-lg md:text-xl text-blue-100 max-w-2xl mx-auto mb-10 relative z-10'
+                >
+                    Explore hundreds of community-contributed recipes. One-click
+                    install configurations for your favorite apps.
+                </p>
+                <Button
+                    href='https://cookbook.statuskitchen.app'
+                    external
+                    class='!bg-white !text-gnome-blue hover:!bg-blue-50 relative z-10'
+                >
+                    <i class='ph-bold ph-book-bookmark mr-2'></i> Browse Cookbook
+                </Button>
+            </div>
+        </div>
+    </section>
+
+    <section id='download' class='py-20 bg-white dark:bg-surface-dark'>
+        <div class='container mx-auto px-4 text-center'>
+            <h2 class='text-3xl font-bold mb-8 text-cast-iron dark:text-white'>
+                Ready to take control?
+            </h2>
+            <div
+                class='flex flex-col sm:flex-row justify-center items-center gap-4'
+            >
+                <a
+                    href='https://flathub.org/apps/org.keithvassallomt.StatusKitchen'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    class='hover:opacity-90 transition-opacity'
+                >
+                    <img
+                        alt='Get it on Flathub'
+                        src='https://dl.flathub.org/assets/badges/flathub-badge-en.png'
+                        class='h-[52px]'
+                    />
+                </a>
+                <Button
+                    href='https://github.com/keithvassallomt/statuskitchen/releases'
+                    external
+                    variant='secondary'
+                    class='!px-6 !py-3 h-[52px]'
+                >
+                    <i class='ph-bold ph-download-simple mr-2'></i> View all downloads
+                </Button>
+                <Button
+                    href='https://github.com/keithvassallomt/statuskitchen'
+                    external
+                    variant='secondary'
+                    class='!px-6 !py-3 h-[52px]'
+                >
+                    <i class='ph-bold ph-github-logo mr-2'></i> View Source
+                </Button>
+            </div>
+            <p class='mt-8 text-sm text-gray-500'>
+                Requires GNOME 45 or later.
+            </p>
+        </div>
+    </section>
+</PageLayout>

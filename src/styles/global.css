@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* GNOME Palette */
+  /* GNOME Palette - Replaced Blue/Slate with Teal per user request */
+  --color-gnome-blue: #12a993;      /* Teal 3 */
+  --color-gnome-blue-light: #48dcb9;/* Teal 2 (Adjusted for better contrast on light) - Original #94e3d3 is very light */
+  --color-gnome-blue-dark: #088b77; /* Teal 4 */
+  
+  --color-gnome-green: #26a269;
+  --color-gnome-yellow: #e5a50a;
+  --color-gnome-red: #c01c28;
+
+  /* Theme Colors */
+  --color-cast-iron: #242424;
+  --color-surface-light: #f6f5f4;
+  --color-surface-dark: #1e1e1e;
+  --color-surface-card: #ffffff;
+  --color-surface-card-dark: #303030;
+
+  /* Typography */
+  --font-sans: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* Radius */
+  --radius-window: 12px;
+  --radius-button: 8px;
+}
+
+@layer base {
+  body {
+    @apply bg-surface-light text-cast-iron font-sans antialiased;
+  }
+
+  /* Removed conflicting media query since we are enforcing class-based dark mode */
+
+  :root.dark body {
+      @apply bg-surface-dark text-white;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+}
